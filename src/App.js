@@ -1,22 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
 
 function App() {
+  const [tipoMaquina, setTipoMaquina] = useState('');
+  const [tempo, setTempo] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Tipo de máquina:', tipoMaquina);
+    console.log('Tempo:', tempo);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          O primeiro site de davi dog
+          dog dog 
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          <form onSubmit={handleSubmit}>
+            <label>
+              Tipo de máquina:
+              <input type="text" value={tipoMaquina} onChange={(e) => setTipoMaquina(e.target.value)} />
+            </label>
+            <br />
+            <label>
+              Tempo:
+              <input type="text" value={tempo} onChange={(e) => setTempo(e.target.value)} />
+            </label>
+            <br />
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+
       </header>
     </div>
   );
