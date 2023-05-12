@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
 
@@ -16,7 +15,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          dog dog 
+          dog dog
         </p>
         <div>
           <form onSubmit={handleSubmit}>
